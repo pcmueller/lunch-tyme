@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSpring, animated } from 'react-spring';
 import Header from '../Header/Header';
 import Card from '../Card/Card';
 // import Details from '../Details/Details';

@@ -3,7 +3,7 @@ import React from 'react';
 const Card = ({ id, name, category, imageURL}) => {
 
   return (
-    <article 
+    <button 
       className='card' 
       id={id}
       style={{ 
@@ -12,7 +12,7 @@ const Card = ({ id, name, category, imageURL}) => {
     >
       <h2 className='name'>{name}</h2>
       <h3 className='category'>{category}</h3>
-    </article>
+    </button>
   );
 }
 
