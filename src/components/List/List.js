@@ -11,8 +11,8 @@ const List = ({ restaurants, error }) => {
       const newCards = restaurants.map(restaurant => {
         return (
           <Card
-            key={restaurant?.contact?.phone}
-            id={restaurant?.contact?.phone}
+            key={restaurants.indexOf(restaurant)}
+            id={restaurants.indexOf(restaurant)}
             name={restaurant?.name}
             category={restaurant?.category}
           />
