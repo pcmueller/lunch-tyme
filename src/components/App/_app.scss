@@ -7,8 +7,7 @@ html,
 body,
 #root {
   height: 100%;
-  background-color: $charcoal;
-  font-family: $roboto;
+  background-color: $dark;
 }
 
 .app {
@@ -19,41 +18,23 @@ body,
 }
 
 .message-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flex-center(column);
   width: 100%;
 }
 
 .message {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center(column);
   height: 100%;
   width: 100%;
-  color: $deep-sky-blue;
-  font-family: $marker;
-  font-size: 3em;
-  text-shadow: 0px 5px 20px $eerie-black;
+  color: $dark;
+  background-color: $light;
+  font-size: 2em;
 }
 
 @media screen and (max-width: 769px) {
-  .message-box {
-    height: 6em;
-  }
 
-  .message {
-    font-size: 2em;
-  }
 }
 
 @media screen and (max-width: 415px) {
-  .message-box {
-    height: 5em;
-  }
 
-  .message {
-    font-size: 1.4em;
-  }
 }

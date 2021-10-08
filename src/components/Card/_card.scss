@@ -1,0 +1,24 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 180px;
+  width: 100%;
+  color: $light;
+  text-shadow: 0.7px 0.5px rgb(54, 29, 29);
+}
+
+.name, .category {
+  margin-bottom: 6px;
+  margin-left: 12px;
+}
+
+.name {
+  font-family: 'AvenirNextDemi';
+  font-size: 16px;
+}
+
+.category {
+  font-family: 'AvenirNextRegular';
+  font-size: 12px;
+}
