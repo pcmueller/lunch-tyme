@@ -1,4 +1,4 @@
-const API_KEY = process.env.REACT_APP_BR_MAPS_API_KEY;
+// const API_KEY = process.env.REACT_APP_BR_MAPS_API_KEY;
 
 const baseURL = 'https://s3.amazonaws.com/br-codingexams/restaurants.json';
 
