@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import Header from '../Header/Header';
 
 const List = () => {
   return (
-    <section className='list'>
-      LIST ENTRIES
-    </section>
+    <>
+      <Header />
+      <section className='list'>
+        LIST ENTRIES
+      </section>
+    </>
   );
 }
 

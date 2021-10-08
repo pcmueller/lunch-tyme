@@ -16,6 +16,20 @@ body,
   width: 100%;
 }
 
+.message-box {
+  @include flex-center(column);
+  width: 100%;
+}
+
+.message {
+  @include flex-center(column);
+  height: 100%;
+  width: 100%;
+  color: $dark;
+  background-color: $light;
+  font-size: 2em;
+}
+
 @media screen and (max-width: 769px) {
 
 }

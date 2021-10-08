@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Redirect, BrowserRouter as Router } from 'react-router-dom';
 import { fetchRestaurants } from '../../utils/apiCalls';
-import Header from '../Header/Header';
+import List from '../List/List';
 
 const App = () => {
 
@@ -13,7 +13,7 @@ const App = () => {
       fetchRestaurants()
         .then(response => {
           if (response) {
-            console.log(response);
+            setRestaurants(response);
           }
         })
         .catch(error => {
@@ -28,7 +28,14 @@ const App = () => {
   return (
     <Router>
       <div className='app'>
-        <Header />
+        <Route exact path='/' render={() =>
+          <List />
+        }/>
+        <Route render= {() => {
+          <div className='message-box'>
+            <h1 className='message'>Page Not Found</h1>
+          </div>
+        }}/>
       </div>
     </Router>
   );
