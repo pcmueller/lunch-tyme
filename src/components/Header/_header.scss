@@ -1,0 +1,9 @@
+.app-header {
+  @include flex-center(row);
+  height: 80px;
+  width: 100%;
+  color: $light;
+  background-color: $header;
+  font-family: 'AvenirNextBold';
+  font-size: 17px;
+}
