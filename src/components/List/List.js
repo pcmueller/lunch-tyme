@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import Card from '../Card/Card';
+import Details from '../Details/Details';
 
 const List = ({ restaurants, error }) => {
 
