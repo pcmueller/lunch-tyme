@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const Card = () => {
+const Card = ({ id, name, category}) => {
   return (
-    <article className='card'>
-      RESTAURANT
+    <article className='card' id={id}>
+      <h2>{name}</h2>
+      <h3>{category}</h3>
     </article>
   );
 }

@@ -14,7 +14,7 @@ const App = () => {
       fetchRestaurants()
         .then(response => {
           if (response) {
-            setRestaurants(response);
+            setRestaurants(response.restaurants);
           }
         })
         .catch(error => {
@@ -25,28 +25,36 @@ const App = () => {
     getRestaurants();
   }, []);
 
-    const displaySelected = (match) => {
-      const isRestaurantID = restaurants.find(card => card.id === match.params.id);
-      if (isRestaurantID) {
-        return (
-          <Details
-            id={match.params.id}
-            error={error}
-            setError={setError}
-          />
-        )
-      } else {
-        return <Redirect to='/'/>;
-      }
-  }
+  useEffect(() => {
+    if (restaurants.length) {
+      // console.log(restaurants);
+    }
+  }, [restaurants]);
 
+  const displaySelected = (match) => {
+    const isRestaurantID = restaurants.find(card => card.id === match.params.id);
+    if (isRestaurantID) {
+      return (
+        <Details
+          id={match.params.id}
+          error={error}
+          setError={setError}
+        />
+      )
+    } else {
+      return <Redirect to='/'/>;
+    }
+  }
 
   return (
     <Router>
       <div className='app'>
         <Route path='/:id' render={({ match }) => displaySelected(match) }/>
         <Route exact path='/' render={() =>
-          <List />
+          <List 
+            restaurants={restaurants}
+            error={error}
+          />
         }/>
         <Route render= {() => {
           <div className='message-box'>
