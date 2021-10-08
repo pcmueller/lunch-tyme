@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Redirect, BrowserRouter as Router } from 'react-router-dom';
 import { fetchRestaurants } from '../../utils/apiCalls';
 import List from '../List/List';
+import Details from '../Details/Details';
 
 const App = () => {
 
@@ -24,10 +25,26 @@ const App = () => {
     getRestaurants();
   }, []);
 
+    const displaySelected = (match) => {
+      const isRestaurantID = restaurants.find(card => card.id === match.params.id);
+      if (isRestaurantID) {
+        return (
+          <Details
+            id={match.params.id}
+            error={error}
+            setError={setError}
+          />
+        )
+      } else {
+        return <Redirect to='/'/>;
+      }
+  }
+
 
   return (
     <Router>
       <div className='app'>
+        <Route path='/:id' render={({ match }) => displaySelected(match) }/>
         <Route exact path='/' render={() =>
           <List />
         }/>
