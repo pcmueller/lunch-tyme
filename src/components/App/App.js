@@ -25,12 +25,6 @@ const App = () => {
     getRestaurants();
   }, []);
 
-  useEffect(() => {
-    if (restaurants.length) {
-      // console.log(restaurants);
-    }
-  }, [restaurants]);
-
   const displaySelected = (match) => {
     const isRestaurantID = restaurants.find(card => card.id === match.params.id);
     if (isRestaurantID) {
