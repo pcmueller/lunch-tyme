@@ -1,0 +1,4 @@
+.list {
+  @include flex-center(column);
+  width: 100%;
+}

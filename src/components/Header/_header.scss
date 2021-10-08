@@ -1,9 +1,15 @@
 .app-header {
-  @include flex-center(row);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   height: 80px;
   width: 100%;
   color: $light;
   background-color: $header;
-  font-family: 'AvenirNextBold';
-  font-size: 17px;
+
+  h1 {
+    font-family: 'AvenirNextDemi';
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
 }

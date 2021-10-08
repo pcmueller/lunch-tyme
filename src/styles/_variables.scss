@@ -1,14 +1,18 @@
 // FONTS
 
 @font-face {
-  font-family: 'AvenirNext';
-  src: url('../assets/fonts/AvenirNext.ttf') format('truetype'),
+  font-family: 'AvenirNextRegular';
+  src: url('../assets/fonts/AvenirNext/AvenirNextLTPro-Regular.otf') format('opentype'),
+}
+
+@font-face {
+  font-family: 'AvenirNextDemi';
+  src: url('../assets/fonts/AvenirNext/AvenirNextLTPro-Demi.otf') format('opentype'),
 }
 
 @font-face {
   font-family: 'AvenirNextBold';
-  font-weight: bold;
-  src: url('../assets/fonts/AvenirNext.ttf') format('truetype'),
+  src: url('../assets/fonts/AvenirNext/AvenirNextLTPro-Bold.otf') format('opentype'),
 }
 
 // COLORS

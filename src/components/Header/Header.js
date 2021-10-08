@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
   return (
     <header className='app-header'>
-      Lunch Tyme
+      <h1>Lunch Tyme</h1>
     </header>
   );
 }
