@@ -5,30 +5,23 @@ import mapBtn from '../../assets/cuts/icon_map@2x.png';
 const Header = ({ drawer, handlePaneClose}) => {
 
   return (
-    <>
-    {!drawer &&
-      <header className='app-header'>
-        <h1>Lunch Tyme</h1>
-      </header>
-    }
-    {drawer && 
-      <header className='drawer-header'>
-        <div className='drawer-header-left'>
+    <header className='app-header'>
+      <div className='drawer-header-left'>
+        {drawer && 
           <button onClick={handlePaneClose}>
             <img src={backBtn} alt='back icon'/>
           </button>
-        </div>
-        <div className='drawer-header-center'>
-          <h1>Lunch Tyme</h1>
-        </div>
-        <div className='drawer-header-right'>
-          <button>
-            <img src={mapBtn} alt='map icon'/>
-          </button>
-        </div>
-      </header>
-    }
-    </>
+        }
+      </div>
+      <div className='drawer-header-center'>
+        <h1>Lunch Tyme</h1>
+      </div>
+      <div className='drawer-header-right'>
+        <button>
+          <img src={mapBtn} alt='map icon'/>
+        </button>
+      </div>
+    </header>
   )
 }
 

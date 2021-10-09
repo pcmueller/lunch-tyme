@@ -1,24 +1,4 @@
 .app-header {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 80px;
-  width: 100%;
-  color: $light;
-  background-color: $header;
-
-  h1 {
-    font-family: 'AvenirNextDemi';
-    font-size: 17px;
-    margin-bottom: 16px;
-  }
-}
-
-.slide-pane {
-  all: unset;
-}
-
-.drawer-header {
   display: grid;
   grid-template-columns: 30% 40% 30%;
   height: 80px;
@@ -26,10 +6,13 @@
   color: $light;
   background-color: $header;
 
-
   button {
     margin-bottom: 16px;
   }
+}
+
+.slide-pane {
+  all: unset;
 }
 
 .drawer-header-left {
