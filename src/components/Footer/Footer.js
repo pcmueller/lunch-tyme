@@ -5,16 +5,24 @@ import lunchBtn from '../../assets/cuts/tab_lunch@2x.png';
 const Footer = () => {
 
   return (
-    <header className='app-footer'>
+    <footer className='app-footer'>
       <div className='footer-left'>
-          <img src={lunchBtn} alt='map icon'/>
+        <button>
+          <div className='btn-contents'>
+            <img src={lunchBtn} alt='map icon'/>
+            <span>lunch</span>
+          </div>
+        </button>
       </div>
       <div className='footer-right'>
         <button>
-          <img src={webBtn} alt='map icon'/>
+          <div className='btn-contents'>
+            <img src={webBtn} alt='map icon'/>
+            <span>internets</span>
+          </div>
         </button>
       </div>
-    </header>
+    </footer>
   )
 }
 

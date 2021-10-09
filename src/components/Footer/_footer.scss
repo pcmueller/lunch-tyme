@@ -1,6 +1,10 @@
 .app-footer {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  all: unset;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
   height: 50px;
   width: 100%;
   color: $light;
@@ -9,6 +13,39 @@
 
 .footer-left, .footer-right {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 50%;
+  // height: 20vh;
+
+  button {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    opacity: 1;
+    width: 25%;
+    height: 85%;
+  }
+}
+
+.btn-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  img {
+    height: 50%;
+    margin-bottom: 3px;
+  }
+
+  span {
+    font-family: 'AvenirNextRegular';
+    font-size: 10px;
+  }
 }

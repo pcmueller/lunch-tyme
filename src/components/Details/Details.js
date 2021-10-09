@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import MapDisplay from '../MapDisplay/MapDisplay';
+import Footer from '../Footer/Footer';
 
 const Details = ({ selected, handlePaneClose }) => {
 
@@ -60,6 +61,7 @@ const Details = ({ selected, handlePaneClose }) => {
           <h3 className='category'>{selected.category}</h3>
         </div>
         {details}
+        <Footer />
       </section>
   )
 }
