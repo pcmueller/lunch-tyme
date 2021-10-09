@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useSpring, animated } from 'react-spring';
 import Header from '../Header/Header';
 import Card from '../Card/Card';
-// import Details from '../Details/Details';
 
-const List = ({ restaurants, error }) => {
+const List = ({ restaurants, error, setSelected, setIsPaneOpen }) => {
 
   const [ cards, setCards] = useState([]);
 
@@ -15,9 +13,9 @@ const List = ({ restaurants, error }) => {
           <Card
             key={restaurants?.indexOf(restaurant)}
             id={restaurants?.indexOf(restaurant)}
-            name={restaurant?.name}
-            category={restaurant?.category}
-            imageURL={restaurant?.backgroundImageURL}
+            restaurant={restaurant}
+            setSelected={setSelected}
+            setIsPaneOpen={setIsPaneOpen}
           />
         )
       });
@@ -30,7 +28,7 @@ const List = ({ restaurants, error }) => {
     if (restaurants.length > 0) {
       populateList();
     }
-  }, [restaurants, setCards]);
+  }, [restaurants, setCards, setSelected, setIsPaneOpen]);
 
   return (
     <>

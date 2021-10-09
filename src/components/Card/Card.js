@@ -1,17 +1,23 @@
 import React from 'react';
 
-const Card = ({ id, name, category, imageURL}) => {
+const Card = ({ id, restaurant, setSelected, setIsPaneOpen }) => {
+
+  const handleClick = () => {
+    setSelected(restaurant);
+    setIsPaneOpen(true);
+  }
 
   return (
     <button 
       className='card' 
       id={id}
       style={{ 
-        backgroundImage: `url(${imageURL})` 
+        backgroundImage: `url(${restaurant.backgroundImageURL})` 
       }}
+      onClick={handleClick}
     >
-      <h2 className='name'>{name}</h2>
-      <h3 className='category'>{category}</h3>
+      <h2 className='name'>{restaurant.name}</h2>
+      <h3 className='category'>{restaurant.category}</h3>
     </button>
   );
 }
