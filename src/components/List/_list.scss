@@ -1,5 +1,13 @@
+.list-container {
+  width: 100%;
+  position: relative;
+  margin-top: 70px;
+}
+
 .list {
   @include flex-center(column);
   width: 100%;
   margin: 0;
+  overflow: scroll;
+  overscroll-behavior: contain;
 }

@@ -32,13 +32,15 @@ const List = ({ restaurants, error, setSelected, setIsPaneOpen }) => {
   }, [restaurants, setCards, setSelected, setIsPaneOpen]);
 
   return (
-    <section className='container'>
-      <Header drawer={false} />
-      <div className='list'>
-        {cards.length === restaurants.length && !error && cards}
-      </div>
-      <Footer />
-    </section>
+    <>
+    <Header drawer={false} />
+      <section className='list-container'>
+        <div className='list'>
+          {cards.length === restaurants.length && !error && cards}
+        </div>
+      </section>
+    <Footer />
+    </>
   );
 }
 

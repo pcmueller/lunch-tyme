@@ -23,13 +23,6 @@ body,
   position: relative;
 }
 
-.container {
-  min-height: 100%;
-  width: 100%;
-  position: relative;
-  // min-height: calc(100vh - 50px);
-}
-
 .message-box {
   @include flex-center(column);
   width: 100%;
