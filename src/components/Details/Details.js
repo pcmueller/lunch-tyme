@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
-import MapDisplay from '../MapDisplay/MapDisplay';
+import Map from '../Map/Map';
 
 const Details = ({ selected, handlePaneClose }) => {
 
   const [ details, setDetails] = useState();
+  const [ location, setLocation] = useState({});
 
   useEffect(() => {
+    const getLocationData = () => {
+      setLocation({
+        address: `${selected?.location?.city}, ${selected?.location?.state} ${selected?.location?.postalCode}`,
+        lat: `${selected?.location?.lat}`,
+        lng: `${selected?.location?.lng}`
+      });
+      setDetails(buildHTML);
+    }
+
     const buildHTML = () => {
       return (
         <div className='details-body'>
           <p>
             <span>{selected?.location?.address}</span>
-            <span>
-              {selected?.location?.city}, {selected?.location?.state} {selected?.location?.postalCode}
-            </span>
+            <span>{location.address}</span>
           </p>
           {selected?.contact?.formattedPhone && <p>{selected.contact.formattedPhone}</p>}
           {selected?.contact?.twitter && <p>@{selected.contact.twitter}</p>}
@@ -23,9 +31,9 @@ const Details = ({ selected, handlePaneClose }) => {
     }
 
     if (selected) {
-      setDetails(buildHTML);
+      getLocationData();
     }
-  }, [selected]);
+  }, [selected, location.address]);
 
   return (
       <section className='details'>
@@ -33,7 +41,7 @@ const Details = ({ selected, handlePaneClose }) => {
           drawer={true}
           handlePaneClose={handlePaneClose}
         />
-        {/* <MapDisplay selected={selected} /> */}
+        <Map location={location} />
         <div className='details-banner'>
           <h2 className='name'>{selected.name}</h2>
           <h3 className='category'>{selected.category}</h3>
