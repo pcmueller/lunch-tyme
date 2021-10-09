@@ -1,5 +1,6 @@
 import React from 'react';
 import backBtn from '../../assets/cuts/ic_webBack@2x.png';
+import mapBtn from '../../assets/cuts/icon_map@2x.png';
 
 const Header = ({ drawer, handlePaneClose}) => {
 
@@ -20,7 +21,11 @@ const Header = ({ drawer, handlePaneClose}) => {
         <div className='drawer-header-center'>
           <h1>Lunch Tyme</h1>
         </div>
-        <div className='drawer-header-right'></div>
+        <div className='drawer-header-right'>
+          <button>
+            <img src={mapBtn}/>
+          </button>
+        </div>
       </header>
     }
     </>

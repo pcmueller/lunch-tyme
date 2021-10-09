@@ -60,3 +60,22 @@
     font-size: 17px;
   }
 }
+
+.drawer-header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 15px;
+  padding-bottom: 12px;
+
+  button {
+    all: unset;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
+}

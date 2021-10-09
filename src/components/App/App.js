@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import SlidingPane from 'react-sliding-pane';
-import "react-sliding-pane/dist/react-sliding-pane.css";
+import 'react-sliding-pane/dist/react-sliding-pane.css';
 import { fetchRestaurants } from '../../utils/apiCalls';
 import List from '../List/List';
 import Details from '../Details/Details';
