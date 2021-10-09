@@ -7,19 +7,18 @@ const API_KEY = process.env.REACT_APP_MAPS_API_KEY;
 const MapDisplay = ({ google, selected }) => {
 
   const containerStyles = {
-    // display: 'block',
     width: "100%",
     height: "100%",
-    zIndex: '0'
   }
 
   const mapStyles = {
-    // display: 'block',
-    // zIndex: '0',
     width: '100%',
     height: '180px',
-    // position: 'relative',
   };
+
+  const zoomOptions = {
+    position: google.maps.ControlPosition.TOP_LEFT
+  }
 
   return (
     <Map
@@ -28,6 +27,7 @@ const MapDisplay = ({ google, selected }) => {
       // disableDefaultUI={true}
       draggable={true}
       zoomControl={true}
+      zoomControlOptions={zoomOptions}
       mapTypeControl={false}
       streetViewControl={false}
       style={mapStyles}
