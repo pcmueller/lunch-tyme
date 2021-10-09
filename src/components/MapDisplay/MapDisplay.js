@@ -25,7 +25,9 @@ const MapDisplay = ({ google, selected }) => {
     <Map
       google={google} 
       zoom={14}
+      // disableDefaultUI={true}
       draggable={true}
+      zoomControl={true}
       mapTypeControl={false}
       streetViewControl={false}
       style={mapStyles}
