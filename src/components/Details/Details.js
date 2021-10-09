@@ -48,10 +48,12 @@ const Details = ({ selected, handlePaneClose }) => {
           handlePaneClose={handlePaneClose}
         />
         {location?.streetAddress && 
-          <MapDisplay 
-            selected={selected}
-            location={location}
-          />
+          <div className='map-section'>
+            <MapDisplay 
+              selected={selected}
+              location={location}
+            />
+          </div>
         }
         <div className='details-banner'>
           <h2 className='name'>{selected.name}</h2>

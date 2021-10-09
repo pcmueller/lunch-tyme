@@ -1,27 +1,30 @@
 import React from 'react';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { findByLabelText } from '@testing-library/dom';
 
 const API_KEY = process.env.REACT_APP_MAPS_API_KEY;
 
 const MapDisplay = ({ google, selected }) => {
 
   const containerStyles = {
-    position: "static",
+    // display: 'block',
     width: "100%",
-    height: "100%"
+    height: "100%",
+    zIndex: '0'
   }
 
   const mapStyles = {
+    // display: 'block',
+    // zIndex: '0',
     width: '100%',
-    height: '30%',
+    height: '180px',
     // position: 'relative',
-    // marginTop: '80px'
   };
 
   return (
     <Map
       google={google} 
-      zoom={13}
+      zoom={14}
       draggable={true}
       mapTypeControl={false}
       streetViewControl={false}
