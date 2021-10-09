@@ -1,0 +1,14 @@
+.app-footer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 50px;
+  width: 100%;
+  color: $light;
+  background-color: $dark;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

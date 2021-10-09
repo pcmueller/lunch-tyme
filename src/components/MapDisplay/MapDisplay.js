@@ -16,7 +16,7 @@ const MapDisplay = ({ google, selected }) => {
     height: '180px',
   };
 
-  const zoomOptions = {
+  const zoomStyles = {
     position: google.maps.ControlPosition.TOP_LEFT
   }
 
@@ -27,11 +27,11 @@ const MapDisplay = ({ google, selected }) => {
       // disableDefaultUI={true}
       draggable={true}
       zoomControl={true}
-      zoomControlOptions={zoomOptions}
       mapTypeControl={false}
       streetViewControl={false}
       style={mapStyles}
       containerStyle={containerStyles}
+      zoomControlOptions={zoomStyles}
       initialCenter={{
         lat: selected?.location?.lat,
         lng: selected?.location?.lng

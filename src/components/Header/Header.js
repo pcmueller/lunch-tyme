@@ -25,8 +25,4 @@ const Header = ({ drawer, handlePaneClose}) => {
   )
 }
 
-
-
-
-
 export default Header;
