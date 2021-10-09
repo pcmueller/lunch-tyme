@@ -50,4 +50,10 @@ div.map, .map {
 .details-body {
   font-family: 'AvenirNextRegular';
   padding: 16px 12px 16px 12px;
+
+  p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 26px;
+  }
 }
