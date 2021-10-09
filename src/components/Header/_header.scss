@@ -17,3 +17,46 @@
 .slide-pane {
   all: unset;
 }
+
+.drawer-header {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  height: 80px;
+  width: 100%;
+  color: $light;
+  background-color: $header;
+
+
+  button {
+    margin-bottom: 16px;
+  }
+}
+
+.drawer-header-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 12px;
+  padding-bottom: 12px;
+
+  button {
+    all: unset;
+
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
+}
+
+.drawer-header-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 16px;
+
+  h1 {
+    font-family: 'AvenirNextDemi';
+    font-size: 17px;
+  }
+}

@@ -44,18 +44,21 @@ const App = () => {
             setIsPaneOpen={setIsPaneOpen}
             setSelected={setSelected}
           />
-        <SlidingPane
-          className='sliding-pane'
-          overlayClassName="some-custom-overlay-class"
-          isOpen={isPaneOpen}
-          title='Lunch Tyme'
-          hideHeader={true}
-          onRequestClose={handlePaneClose}
-          width='100%'
-          padding='0'
-        >
-          <Details selected={selected} />
-        </SlidingPane>
+          <SlidingPane
+            className='sliding-pane'
+            overlayClassName="some-custom-overlay-class"
+            isOpen={isPaneOpen}
+            title='Lunch Tyme'
+            hideHeader={true}
+            onRequestClose={handlePaneClose}
+            width='100%'
+            padding='0'
+          >
+            <Details 
+              selected={selected} 
+              handlePaneClose={handlePaneClose} 
+            />
+          </SlidingPane>
         </Route>
         <Route render= {() => {
           <div className='message-box'>

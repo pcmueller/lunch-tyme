@@ -32,7 +32,7 @@ const List = ({ restaurants, error, setSelected, setIsPaneOpen }) => {
 
   return (
     <>
-      <Header />
+      <Header drawer={false} />
       <section className='list'>
         {cards.length === restaurants.length && !error && cards}
       </section>
