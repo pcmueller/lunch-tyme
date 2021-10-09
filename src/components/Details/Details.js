@@ -46,6 +46,7 @@ const Details = ({ selected, handlePaneClose }) => {
       <section className='details'>
         <Header 
           drawer={true}
+          style={{ zIndex: 1000 }}
           handlePaneClose={handlePaneClose}
         />
         {location?.streetAddress && 

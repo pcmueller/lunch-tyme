@@ -33,13 +33,13 @@ const List = ({ restaurants, error, setSelected, setIsPaneOpen }) => {
 
   return (
     <>
-    <Header drawer={false} />
+      <Header drawer={false} style={{ zIndex: 100 }}/>
       <section className='list-container'>
         <div className='list'>
           {cards.length === restaurants.length && !error && cards}
         </div>
       </section>
-    <Footer />
+      <Footer />
     </>
   );
 }

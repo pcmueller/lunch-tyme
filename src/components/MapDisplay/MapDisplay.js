@@ -1,14 +1,13 @@
 import React from 'react';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
-import { findByLabelText } from '@testing-library/dom';
 
 const API_KEY = process.env.REACT_APP_MAPS_API_KEY;
 
 const MapDisplay = ({ google, selected }) => {
 
   const containerStyles = {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
   }
 
   const mapStyles = {
