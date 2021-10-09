@@ -15,7 +15,7 @@ const Header = ({ drawer, handlePaneClose}) => {
       <header className='drawer-header'>
         <div className='drawer-header-left'>
           <button onClick={handlePaneClose}>
-            <img src={backBtn}/>
+            <img src={backBtn} alt='back icon'/>
           </button>
         </div>
         <div className='drawer-header-center'>
@@ -23,7 +23,7 @@ const Header = ({ drawer, handlePaneClose}) => {
         </div>
         <div className='drawer-header-right'>
           <button>
-            <img src={mapBtn}/>
+            <img src={mapBtn} alt='map icon'/>
           </button>
         </div>
       </header>
