@@ -1,4 +1,6 @@
 .card {
+  all: unset;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -6,6 +8,9 @@
   width: 100%;
   color: $light;
   text-shadow: 0.7px 0.5px rgb(54, 29, 29);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .name, .category {
@@ -21,4 +26,17 @@
 .category {
   font-family: 'AvenirNextRegular';
   font-size: 12px;
+}
+
+button:hover, button:focus-visible {
+  border: none;
+  opacity: 0.7;
+}
+
+button:active {
+  border-width: 1px;
+  border-style: inset;
+  border-color: rgba(124, 111, 111, 0.707);
+  opacity: 0.5;
+  background-size: 99%;
 }
