@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import Card from '../Card/Card';
+import Footer from '../Footer/Footer';
 
 const List = ({ restaurants, error, setSelected, setIsPaneOpen }) => {
 
@@ -32,10 +33,13 @@ const List = ({ restaurants, error, setSelected, setIsPaneOpen }) => {
 
   return (
     <>
-      <Header drawer={false} />
-      <section className='list'>
-        {cards.length === restaurants.length && !error && cards}
+    <Header drawer={false} />
+      <section className='list-container'>
+        <div className='list'>
+          {cards.length === restaurants.length && !error && cards}
+        </div>
       </section>
+    <Footer />
     </>
   );
 }
