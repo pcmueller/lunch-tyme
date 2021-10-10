@@ -1,73 +1,66 @@
-import React, { useState, useEffect } from 'react';
-import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import React, { useRef, useState, useEffect } from 'react';
+import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
-const API_KEY = process.env.REACT_APP_MAPS_API_KEY;
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
 
-const MapDisplay = ({ google, selected }) => {
+const MapDisplay = ({ selected }) => {
 
-  const [ coordinates, setCoordinates] = useState({});
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng, setLng] = useState(0);
+  const [lat, setLat] = useState(0);
+  const [zoom, setZoom] = useState(14);
+
+  useEffect(() => {
+    if (!map.current) return;
+    if (lat && lng) {
+      map.current.on('move', () => {
+        setLng(map.current.getCenter().lng.toFixed(4));
+        setLat(map.current.getCenter().lat.toFixed(4));
+        setZoom(map.current.getZoom().toFixed(2));
+      });
+    }
+  });
 
   useEffect(() => {
     const assignCoordinates = () => {
-
-      setCoordinates({
-        lat: selected?.location?.lat,
-        lng: selected?.location?.lng
-      });
-
+      setLat(selected?.location?.lat);
+      setLng(selected?.location?.lng);
     };
+
+    const initializeMap = () => {
+      if (map.current) return;
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [lng, lat],
+        zoom: zoom
+      });
+    }
 
     if (selected?.location) {
       assignCoordinates();
     }
-  }, [selected]);
 
-  const containerStyles = {
-    width: '100%',
-    height: '100%',
-  }
-
-  const mapStyles = {
-    width: '100%',
-    height: '180px',
-  };
-
-  const zoomStyles = {
-    position: google.maps.ControlPosition.TOP_LEFT
-  }
+    if (lat && lng) {
+      console.log(lat, lng);
+      initializeMap();
+    }
+  }, [selected, lat, lng, zoom]);
 
   return (
     <>
-    {coordinates?.lat && 
-      <Map
-        google={google} 
-        zoom={14}
-        // disableDefaultUI={true}
-        draggable={true}
-        zoomControl={true}
-        mapTypeControl={false}
-        streetViewControl={false}
-        style={mapStyles}
-        containerStyle={containerStyles}
-        zoomControlOptions={zoomStyles}
-        initialCenter={coordinates}
-      >
-        <Marker />
-        {/* <InfoWindow
-          visible={showInfoWindow}
-          style={styles.infoWindow}
-        >
-          <div className={classes.infoWindow}>
-            <p>Click on the map or drag the marker to select location where the incident occurred</p>
+      {lat && 
+        <section className='map-section'>
+          <div className="sidebar">
+            Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
           </div>
-        </InfoWindow> */}
-      </Map>
-    }
-    
+          <div ref={mapContainer} className='map-container' />
+        </section>
+      }
     </>
   )
 }
 
-export default GoogleApiWrapper({
-  apiKey: API_KEY
-})(MapDisplay);
+export default MapDisplay;
