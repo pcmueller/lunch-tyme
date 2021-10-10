@@ -55,6 +55,7 @@ const App = () => {
             padding='0'
           >
             <Details 
+              restaurants={restaurants}
               selected={selected} 
               handlePaneClose={handlePaneClose} 
             />

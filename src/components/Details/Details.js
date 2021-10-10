@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import MapDisplay from '../MapDisplay/MapDisplay';
 import Footer from '../Footer/Footer';
 
-const Details = ({ selected, handlePaneClose }) => {
+const Details = ({ selected, restaurants, handlePaneClose }) => {
 
   const [ details, setDetails] = useState();
   const [ location, setLocation] = useState();
@@ -54,6 +54,7 @@ const Details = ({ selected, handlePaneClose }) => {
             <MapDisplay 
               selected={selected}
               location={location}
+              restaurants={restaurants}
             />
           </div>
         }
