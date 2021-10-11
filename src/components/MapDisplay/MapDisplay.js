@@ -53,14 +53,14 @@ const MapDisplay = ({ selected, restaurants }) => {
     }
   }, [selected, lat, lng, restaurants]);
 
+  if (!lat || !lng) {
+    return (
+      <div>Loading...</div>
+    )
+  }
+
   return (
-    <>
-      {lat && 
-        <section className='map-section'>
-          <div ref={mapContainerRef} className='map-container' />
-        </section>
-      }
-    </>
+    <div ref={mapContainerRef} className='map-container' />
   )
 }
 

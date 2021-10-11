@@ -10,6 +10,10 @@
   height: 400px;
 }
 
+.mapboxgl-canvas {
+  height: 180px;
+}
+
 .marker {
   background-image: url('../../assets/cuts/mapbox-icon.png');
   background-size: cover;
@@ -28,4 +32,26 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'AvenirDemi';
+}
+
+@media (min-width: 767px) {
+  .map-section {
+    height: 370px;
+    margin-top: 100px;
+  }
+
+  .map-container {
+    height: 370px;
+  }
+}
+
+@media (min-width: 1279px) {
+  .map-section {
+    height: 400px;
+    margin-top: 60px;
+  }
+
+  .map-container {
+    height: 600px;
+  }
 }

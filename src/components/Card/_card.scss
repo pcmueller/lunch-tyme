@@ -13,32 +13,9 @@
   background-repeat: no-repeat;
 }
 
-.name,
-.category {
-  margin-bottom: 6px;
-  margin-left: 12px;
-}
-
-.name {
-  font-family: 'AvenirNextDemi';
-  font-size: 16px;
-}
-
-.category {
-  font-family: 'AvenirNextRegular';
-  font-size: 12px;
-}
-
 @media (min-width: 767px) {
   .card {
     width: 50%;
-  }
-  .name {
-    font-size: 23px;
-  }
-
-  .category {
-    font-size: 17px;
   }
 }
 

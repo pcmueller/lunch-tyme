@@ -27,12 +27,18 @@ const Details = ({ selected, restaurants, handlePaneClose }) => {
     const buildHTML = () => {
       return (
         <div className='details-body'>
-          <p>
+          <p className='address'>
             <span>{location.streetAddress}</span>
             <span>{location.cityStateZip}</span>
           </p>
-          {selected?.contact?.formattedPhone && <p>{selected.contact.formattedPhone}</p>}
-          {selected?.contact?.twitter && <p>@{selected.contact.twitter}</p>}
+          {selected?.contact?.formattedPhone.length && 
+            <p className='phone'>
+              {selected.contact.formattedPhone}
+            </p>}
+          {selected?.contact?.twitter.length && 
+            <p className='twitter'>
+              @{selected.contact.twitter}
+            </p>}
         </div>
       )
     }

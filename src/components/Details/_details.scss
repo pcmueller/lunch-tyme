@@ -19,12 +19,27 @@ div.slide-pane__content {
   height: 60px;
   color: $light;
   background-color: $accent;
-  padding-top: 10px;
-  margin-top: 30px;
+}
+
+.name,
+.category {
+  margin-bottom: 6px;
+  margin-left: 12px;
+}
+
+.name {
+  font-family: 'AvenirNextDemi';
+  font-size: 16px;
+}
+
+.category {
+  font-family: 'AvenirNextRegular';
+  font-size: 12px;
 }
 
 .details-body {
   font-family: 'AvenirNextRegular';
+  font-size: 16px;
   padding: 16px 12px 16px 12px;
 
   p {
@@ -46,4 +61,43 @@ button:active {
   border-color: rgba(124, 111, 111, 0.707);
   opacity: 0.5;
   background-size: 99%;
+}
+
+@media (min-width: 767px) {
+  .details-banner {
+    height: 95px;
+    padding-top: 10px;
+  }
+
+  .details-body {
+    display: flex;
+    flex-direction: row;
+    font-size: 22px;
+    margin-bottom: 0;
+
+    p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 33.3333333%;
+      padding: 20px;
+      margin: 0;
+    }
+  }
+
+  .name {
+    font-size: 27px;
+  }
+
+  .category {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1250px) {
+  .details-body p {
+    font-size: 20px;
+    padding: 45px;
+  }
 }
