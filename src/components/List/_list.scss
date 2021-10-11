@@ -12,3 +12,11 @@
   overflow: scroll;
   overscroll-behavior: contain;
 }
+
+@media (min-width: 767px) {
+  .list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+}
