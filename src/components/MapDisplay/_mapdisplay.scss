@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 180px;
-  margin-top: 35px;
+  margin-top: 70px;
   position: relative;
 }
 
@@ -34,24 +34,36 @@
   font-family: 'AvenirDemi';
 }
 
-@media (min-width: 767px) {
+@media (min-width: 413px) {
   .map-section {
-    height: 370px;
-    margin-top: 100px;
+    height: 270px;
+    margin-top: 90px;
   }
 
   .map-container {
-    height: 370px;
+    height: 270px;
   }
 }
 
-@media (min-width: 1279px) {
+@media (min-width: 767px) {
   .map-section {
-    height: 400px;
-    margin-top: 60px;
+    height: 550px;
+    margin-top: 120px;
   }
 
   .map-container {
-    height: 600px;
+    height: 550px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .map-section {
+    height: 400px;
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+
+  .map-container {
+    height: 400px;
   }
 }

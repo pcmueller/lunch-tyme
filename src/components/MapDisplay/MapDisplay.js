@@ -35,7 +35,7 @@ const MapDisplay = ({ selected, restaurants }) => {
         container: mapContainerRef.current,
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [lng, lat],
-        zoom: 15
+        zoom: 16
       });
 
       addMarkers(map);

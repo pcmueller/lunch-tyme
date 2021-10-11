@@ -11,8 +11,8 @@ const Details = ({ selected, restaurants, handlePaneClose }) => {
   useEffect(() => {
     const getLocationData = () => {
       setLocation({
-        streetAddress: `${selected?.location.address}`,
-        cityStateZip: `${selected?.location?.city}, ${selected?.location?.state} ${selected?.location?.postalCode}`,
+        streetAddress: `${selected?.location?.address || ''}`,
+        cityStateZip: `${selected?.location?.city || ''}, ${selected?.location?.state || ''} ${selected?.location?.postalCode || ''}`,
         lat: `${selected?.location?.lat}`,
         lng: `${selected?.location?.lng}`
       });
@@ -31,11 +31,11 @@ const Details = ({ selected, restaurants, handlePaneClose }) => {
             <span>{location.streetAddress}</span>
             <span>{location.cityStateZip}</span>
           </p>
-          {selected?.contact?.formattedPhone.length && 
+          {selected?.contact?.formattedPhone?.length && 
             <p className='phone'>
               {selected.contact.formattedPhone}
             </p>}
-          {selected?.contact?.twitter.length && 
+          {selected?.contact?.twitter?.length && 
             <p className='twitter'>
               @{selected.contact.twitter}
             </p>}

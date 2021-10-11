@@ -13,6 +13,13 @@
   overscroll-behavior: contain;
 }
 
+@media (min-width: 413px) {
+  .list-container {
+    margin-top: 90px;
+    margin-bottom: 75px;
+  }
+}
+
 @media (min-width: 767px) {
   .list-container {
     margin-bottom: 0;
