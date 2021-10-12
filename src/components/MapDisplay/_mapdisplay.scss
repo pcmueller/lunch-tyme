@@ -89,7 +89,7 @@
   }
 
   .map-section-lg {
-    margin-top: 120px;
+    margin-top: 150px;
   }
 
   .map-container {
@@ -114,5 +114,11 @@
 
   .map-container {
     height: 700px;
+  }
+}
+
+@media (min-width: 1439px) {
+  .map-section-lg {
+    height: 120vh;
   }
 }
