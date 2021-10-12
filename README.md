@@ -21,9 +21,9 @@
 
 ## Features
 
+- [Live page](https://lunch-tyme-app.herokuapp.com/) deployed on Heroku
 - Functional, modular component structure using React and Hooks
 - Styling and design using Sass/SCSS
-- [Live page](https://lunch-tyme-app.herokuapp.com/) deployed on Heroku
 - Continuous Integration using TravisCI
 - Engineered and test driven using Mac OS Big Sur 11.6, VSCode, and Google Chrome OS browser and DevTools.
 - RESTful API data fetching
