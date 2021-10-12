@@ -1,0 +1,100 @@
+.map-section {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  margin-top: 70px;
+  position: relative;
+}
+
+.map-section-lg {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 70px;
+  position: relative;
+}
+
+.map-container {
+  height: 400px;
+}
+
+.map-container-lg {
+  height: 100vh;
+}
+
+.marker {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-marker-anchor-bottom {
+  z-index: 10000;
+}
+
+.mapboxgl-popup {
+  z-index: 10000;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+
+  h3 {
+    font-family: 'AvenirNextDemi';
+    font-size: 20px;
+    margin: 5px;
+  }
+
+  p {
+    font-family: 'AvenirNextRegular';
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 413px) {
+  .map-section {
+    height: 270px;
+    margin-top: 90px;
+  }
+
+  .map-section-lg {
+    margin-top: 90px;
+  }
+
+  .map-container {
+    height: 270px;
+  }
+}
+
+@media (min-width: 767px) {
+  .map-section {
+    height: 550px;
+    margin-top: 150px;
+  }
+
+  .map-section-lg {
+    margin-top: 120px;
+  }
+
+  .map-container {
+    height: 550px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .map-section {
+    height: 700px;
+    margin-top: 150px;
+    margin-bottom: 0;
+  }
+
+  .map-section-lg {
+    margin-top: 150px;
+  }
+
+  .map-container {
+    height: 700px;
+  }
+}

@@ -1,47 +1,89 @@
-import React from 'react';
-import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
-import { findByLabelText } from '@testing-library/dom';
+import React, { useRef, useState, useEffect } from 'react';
+import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
-const API_KEY = process.env.REACT_APP_MAPS_API_KEY;
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
 
-const MapDisplay = ({ google, selected }) => {
+const MapDisplay = ({ selected, restaurants }) => {
 
-  const containerStyles = {
-    width: "100%",
-    height: "100%",
-  }
+  const mapContainerRef = useRef(null);
+  const [lng, setLng] = useState(0);
+  const [lat, setLat] = useState(0);
+  const [zoom, setZoom] = useState(16);
 
-  const mapStyles = {
-    width: '100%',
-    height: '180px',
-  };
+  useEffect(() => {
+    const assignCoordinates = () => {
+      setLat(selected?.location?.lat);
+      setLng(selected?.location?.lng);
+    };
 
-  const zoomStyles = {
-    position: google.maps.ControlPosition.TOP_LEFT
+    const addMarkers = (map) => {
+      restaurants.forEach(elem => {
+        new mapboxgl.Marker(elem === selected ? {anchor: 'bottom', color: 'red', scale: 1.5} : {})
+          .setLngLat([elem.location.lng, elem.location.lat])
+          .setPopup(
+            new mapboxgl.Popup({ offset: 10, anchor: 'center', closeOnMove: true })
+              .setHTML(`<h3>${elem.name}</h3><p>${elem.category}</p>`)
+          )
+          .addTo(map);
+      });
+    };
+
+    const initializeMap = () => {
+      const map = new mapboxgl.Map({
+        container: mapContainerRef.current,
+        style: 'mapbox://styles/mapbox/streets-v11',
+        attributionControl: false,
+        center: [lng, lat],
+        zoom: zoom,
+      });
+
+      addMarkers(map);
+
+      map.addControl(new mapboxgl.FullscreenControl())
+         .addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
+      const geolocate = new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true,
+        timeout: 1000
+      });
+
+      map.addControl(geolocate);
+
+      if (!selected.name) {
+        setZoom(1);
+        map.on('load', () => {
+          geolocate.trigger();
+        });
+      }
+
+      return () => map.remove();
+    }
+
+    if (selected?.location) {
+      assignCoordinates();
+    }
+
+    if (lat && lng) {
+      initializeMap();
+    }
+  }, [selected, lat, lng, restaurants, zoom]);
+
+  if (!lat || !lng) {
+    return (
+      <div>Loading...</div>
+    )
   }
 
   return (
-    <Map
-      google={google} 
-      zoom={14}
-      // disableDefaultUI={true}
-      draggable={true}
-      zoomControl={true}
-      mapTypeControl={false}
-      streetViewControl={false}
-      style={mapStyles}
-      containerStyle={containerStyles}
-      zoomControlOptions={zoomStyles}
-      initialCenter={{
-        lat: selected?.location?.lat,
-        lng: selected?.location?.lng
-      }}
-    >
-      <Marker />
-    </Map>
+    <div 
+      ref={mapContainerRef} 
+      className={selected.name ? 'map-container' : 'map-container-lg'} 
+    />
   )
 }
 
-export default GoogleApiWrapper({
-  apiKey: API_KEY
-})(MapDisplay);
+export default MapDisplay;

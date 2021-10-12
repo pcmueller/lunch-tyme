@@ -10,7 +10,8 @@
   background-color: $dark;
 }
 
-.footer-left, .footer-right {
+.footer-left,
+.footer-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,6 +27,10 @@
     opacity: 1;
     width: 25%;
     height: 85%;
+  }
+
+  button:active {
+    border: none;
   }
 }
 
@@ -45,5 +50,25 @@
   span {
     font-family: 'AvenirNextRegular';
     font-size: 10px;
+  }
+}
+
+@media (min-width: 413px) {
+ .app-footer {
+  height: 75px;
+ }
+
+  .footer-left,
+  .footer-right {
+    button {
+      width: 18%;
+      height: 80%;
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .app-footer {
+    display: none;
   }
 }

@@ -1,0 +1,30 @@
+.card {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 180px;
+  width: 100%;
+  color: $light;
+  text-shadow: 0.7px 0.5px rgb(54, 29, 29);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card:active {
+  border: none;
+}
+
+@media (min-width: 767px) {
+  .card {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1439px) {
+  .card {
+    width: 33.33333%;
+  }
+}
