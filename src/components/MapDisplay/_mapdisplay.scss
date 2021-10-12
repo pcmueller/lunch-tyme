@@ -16,29 +16,33 @@
 
 .marker {
   background-size: cover;
-  width: 50px;
-  height: 50px;
+  height: 100%;
+  width: 100%;
   border-radius: 50%;
   cursor: pointer;
 }
 
-.selected {
-  background-image: url('../../assets/cuts/marker-icons/mapbox-marker-icon-blue.svg');
-}
-
-.unselected {
-  background-image: url('../../assets/cuts/marker-icons/mapbox-marker-icon-red.svg');
+.mapboxgl-marker-anchor-bottom {
+  z-index: 10000;
 }
 
 .mapboxgl-popup {
-  max-width: 200px;
-  padding: 20px;
   z-index: 10000;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'AvenirDemi';
+
+  h3 {
+    font-family: 'AvenirNextDemi';
+    font-size: 20px;
+    margin: 5px;
+  }
+
+  p {
+    font-family: 'AvenirNextRegular';
+    font-size: 15px;
+  }
 }
 
 @media (min-width: 413px) {

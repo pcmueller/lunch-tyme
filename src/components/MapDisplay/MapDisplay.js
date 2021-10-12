@@ -22,13 +22,7 @@ const MapDisplay = ({ selected, restaurants }) => {
 
     const addMarkers = (map) => {
       restaurants.forEach(elem => {
-        const mrk = document.createElement('div');
-        if (elem.name === selected.name) {
-          mrk.className = 'marker unselected';
-        } else {
-          mrk.className = 'marker selected';
-        }
-        new mapboxgl.Marker(mrk)
+        new mapboxgl.Marker(elem === selected ? {anchor: 'bottom', color: 'red', scale: 1.5} : {})
           .setLngLat([elem.location.lng, elem.location.lat])
           .setPopup(
             new mapboxgl.Popup({ offset: 10, anchor: 'center', closeOnMove: true })
@@ -47,6 +41,14 @@ const MapDisplay = ({ selected, restaurants }) => {
       });
 
       addMarkers(map);
+      map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true,
+          timeout: 3000
+        },
+        trackUserLocation: true,
+        showUserHeading: true
+      }));
       map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
       return () => map.remove();
