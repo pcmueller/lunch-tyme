@@ -1,6 +1,6 @@
-# [LUNCH TYME](https://lunch-tyme-app.herokuapp.com/)
+<h1 align="center">[LUNCH TYME](https://lunch-tyme-app.herokuapp.com/)</h1>
 
- **_A restaurant geolocation app made for the Bottle Rocket FED Coding Test_**
+ <h2 align="center" style="font-style: italic;">A restaurant geolocation app made for the Bottle Rocket FED Coding Test_</h2>
 
 <p align="center">
   <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript"/>
