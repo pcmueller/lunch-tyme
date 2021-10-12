@@ -2,8 +2,6 @@
 
  **_A restaurant geolocation app made for the Bottle Rocket FED Coding Test_**
 
-[Deployed Page](https://lunch-tyme-app.herokuapp.com/)
-
 <p align="center">
   <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript"/>
   <img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react"/>
