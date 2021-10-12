@@ -41,12 +41,12 @@
 
 * iPhone 6/7/8 mobile view
 
-|List View<!-- .element: style="text-align:center;" -->|Detail View<!-- .element: style="text-align:center;" -->|
+|List View<!-- .element: style="text-align:center;" -->|Detail View<!-- .element: style="text-align:center;" -->|Geolocation View<!-- .element: style="text-align:center;" -->|
 |-------|-------|-------|
 |![](/src/assets/images/ListView-iPhone.png)<!-- .element: style="text-align:center;" -->|![](/src/assets/images/DetailView-iPhone.png)<!-- .element: style="text-align:center;" -->|![](/src/assets/images/Geolocation-iPhone.png)<!-- .element: style="text-align:center;" -->|
 
 * iPad tablet view
-* 
-|List View<!-- .element: style="text-align:center;" -->|Detail View<!-- .element: style="text-align:center;" -->|
+
+|List View<!-- .element: style="text-align:center;" -->|Detail View<!-- .element: style="text-align:center;" -->|Geolocation View<!-- .element: style="text-align:center;" -->|
 |-------|-------|-------|
 |![](/src/assets/images/ListView-iPad.png)<!-- .element: style="text-align:center;" -->|![](/src/assets/images/DetailView-iPad.png)<!-- .element: style="text-align:center;" -->|![](/src/assets/images/Geolocation-iPad.png)<!-- .element: style="text-align:center;" -->|
