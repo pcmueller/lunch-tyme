@@ -4,10 +4,6 @@
 <br>
 
 <p align="center">
-<img src="https://app.travis-ci.com/pcmueller/lunch-tyme.svg?token=G9yCJs12yhctP4AY4jEP&branch=main" alt="build badge"/>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript"/>
   <img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react"/>
   <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" alt="react router"/>
@@ -27,6 +23,12 @@
   <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="vscode" />
   <img src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0" alt="macOS"/>
   <img src="https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white" alt="chrome"/>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="https://app.travis-ci.com/pcmueller/lunch-tyme.svg?token=G9yCJs12yhctP4AY4jEP&branch=main" alt="build badge"/>
 </p>
 
 ## Features
