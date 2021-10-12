@@ -2,6 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
 
 const MapDisplay = ({ selected, restaurants }) => {
