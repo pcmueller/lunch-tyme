@@ -9,7 +9,7 @@
 .map-section-lg {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 85vh;
   margin-top: 70px;
   position: relative;
 }
@@ -19,7 +19,11 @@
 }
 
 .map-container-lg {
-  height: 100vh;
+  height: 550px;
+}
+
+.mapboxgl-canvas {
+  position: 0;
 }
 
 .marker {
@@ -53,6 +57,16 @@
   }
 }
 
+@media (max-width: 321px) {
+  .map-section {
+    height: 225px;
+  }
+
+  .map-container {
+    height: 225px;
+  }
+}
+
 @media (min-width: 413px) {
   .map-section {
     height: 270px;
@@ -80,6 +94,10 @@
 
   .map-container {
     height: 550px;
+  }
+
+  .map-container-lg {
+    height: 100vh;
   }
 }
 
