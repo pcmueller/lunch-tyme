@@ -4,9 +4,9 @@
 <br>
 
 <p align="center">
-![Build Status](https://app.travis-ci.com/pcmueller/lunch-tyme.svg?token=G9yCJs12yhctP4AY4jEP&branch=main)
-
+<img src="https://app.travis-ci.com/pcmueller/lunch-tyme.svg?token=G9yCJs12yhctP4AY4jEP&branch=main" alt="build badge"/>
 </p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript"/>
   <img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react"/>
