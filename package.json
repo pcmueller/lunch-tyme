@@ -15,14 +15,16 @@
     "react-scripts": "4.0.3",
     "react-sliding-pane": "^7.0.0",
     "react-tooltip": "^4.2.21",
+    "serve": "^12.0.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "start-server-and-test start http://localhost:3000 cy:run",
-    "eject": "react-scripts eject",
-    "cy:run": "cypress run"
+      "dev": "react-scripts start",
+      "start": "serve -s build",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject",
+      "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [
