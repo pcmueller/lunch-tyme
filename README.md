@@ -25,7 +25,7 @@
 - Functional, modular component structure using React and Hooks
 - Styling and design using Sass/SCSS
 - Continuous Integration using TravisCI
-- Engineered and test driven using Mac OS Big Sur 11.6, VSCode, and Google Chrome OS browser and DevTools.
+- Engineered and test driven using Mac OS Big Sur 11.6, VSCode, and Google Chrome OS browser and DevTools
 - RESTful API data fetching
 - "Detail View" displayed on same page as "List View" using sliding drawer animation
 - Sliding drawer functionality and UI built using `react-sliding-pane` package
