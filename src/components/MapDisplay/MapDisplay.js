@@ -77,9 +77,7 @@ const MapDisplay = ({ selected, restaurants }) => {
   }, [selected, lat, lng, restaurants, zoom]);
 
   if (!lat || !lng) {
-    return (
-      <div>Loading...</div>
-    )
+    return (<div>Loading...</div>)
   }
 
   return (
