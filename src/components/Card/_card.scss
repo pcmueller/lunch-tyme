@@ -20,11 +20,13 @@
 @media (min-width: 767px) {
   .card {
     width: 50%;
+    height: 200px;
   }
 }
 
 @media (min-width: 1439px) {
   .card {
     width: 33.33333%;
+    height: 250px;
   }
 }

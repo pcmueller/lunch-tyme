@@ -2,6 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
 
 const MapDisplay = ({ selected, restaurants }) => {
@@ -13,13 +16,14 @@ const MapDisplay = ({ selected, restaurants }) => {
 
   useEffect(() => {
     const assignCoordinates = () => {
-      setLat(selected?.location?.lat);
-      setLng(selected?.location?.lng);
+      setLat(selected?.location?.lat || 32.9618);
+      setLng(selected?.location?.lng || -96.829169);
     };
 
     const addMarkers = (map) => {
       restaurants.forEach(elem => {
-        new mapboxgl.Marker(elem === selected ? {anchor: 'bottom', color: 'red', scale: 1.5} : {})
+        
+        new mapboxgl.Marker(elem === selected ? {color: 'red', scale: 1.25} : {})
           .setLngLat([elem.location.lng, elem.location.lat])
           .setPopup(
             new mapboxgl.Popup({ offset: 10, anchor: 'center', closeOnMove: true })
@@ -54,7 +58,7 @@ const MapDisplay = ({ selected, restaurants }) => {
       map.addControl(geolocate);
 
       if (!selected.name) {
-        setZoom(1);
+        setZoom(2);
         map.on('load', () => {
           geolocate.trigger();
         });
@@ -63,7 +67,7 @@ const MapDisplay = ({ selected, restaurants }) => {
       return () => map.remove();
     }
 
-    if (selected?.location) {
+    if (selected) {
       assignCoordinates();
     }
 
