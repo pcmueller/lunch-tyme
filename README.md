@@ -30,8 +30,8 @@
 - "Detail View" displayed on same page as "List View" using sliding drawer animation
 - Sliding drawer functionality and UI built using `react-sliding-pane` package
 - Map UI and location data rendering using Mapbox SDK via `react-map-gl` package
-- Locations pinpointed using Mapbox markers, which a user can click to display restaurant Info Labels
-- "Active" restaurant distinguished from other location pins with unique marker
+- Locations pinpointed using Mapbox markers, which can be clicked to display restaurant Info Label popups
+- "Active" restaurant marker distinguished from other location pins
 - User geolocation enabled and displayable by clicking map icon in header navigation bar
 - Mobile-first RWD with 1, 2, and 3-column flex displays, implemented using breakpoints for iPhone 5/SE, iPhone 6/7/8, iPad, iPad Pro, and laptop screen sizes
 - Global footer anchored on mobile view and removed for larger screen sizes
