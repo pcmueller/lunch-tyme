@@ -2,12 +2,14 @@ div.slide-pane__content {
   display: flex;
   flex-direction: column;
   padding: 0;
+  background-color: $light;
 }
 
 .details {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: $light;
 }
 
 .details-banner {
