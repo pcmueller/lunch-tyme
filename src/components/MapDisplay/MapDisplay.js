@@ -9,9 +9,13 @@ const MapDisplay = ({ selected, restaurants }) => {
   const mapContainerRef = useRef(null);
   const [lng, setLng] = useState(0);
   const [lat, setLat] = useState(0);
+  const [zoom, setZoom] = useState(18);
 
   useEffect(() => {
     const assignCoordinates = () => {
+      if (!lat && !lng) {
+        setZoom(12);
+      }
       setLat(selected?.location?.lat);
       setLng(selected?.location?.lng);
     };
@@ -19,7 +23,11 @@ const MapDisplay = ({ selected, restaurants }) => {
     const addMarkers = (map) => {
       restaurants.forEach(elem => {
         const mrk = document.createElement('div');
-        mrk.className = 'marker';
+        if (elem.name === selected.name) {
+          mrk.className = 'marker unselected';
+        } else {
+          mrk.className = 'marker selected';
+        }
         new mapboxgl.Marker(mrk)
           .setLngLat([elem.location.lng, elem.location.lat])
           .setPopup(
@@ -35,7 +43,7 @@ const MapDisplay = ({ selected, restaurants }) => {
         container: mapContainerRef.current,
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [lng, lat],
-        zoom: 16
+        zoom: zoom
       });
 
       addMarkers(map);
@@ -51,7 +59,7 @@ const MapDisplay = ({ selected, restaurants }) => {
     if (lat && lng) {
       initializeMap();
     }
-  }, [selected, lat, lng, restaurants]);
+  }, [selected, lat, lng, restaurants, zoom]);
 
   if (!lat || !lng) {
     return (

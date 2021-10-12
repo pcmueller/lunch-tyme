@@ -15,12 +15,19 @@
 }
 
 .marker {
-  background-image: url('../../assets/cuts/mapbox-icon.png');
   background-size: cover;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.selected {
+  background-image: url('../../assets/cuts/marker-icons/mapbox-marker-icon-blue.svg');
+}
+
+.unselected {
+  background-image: url('../../assets/cuts/marker-icons/mapbox-marker-icon-red.svg');
 }
 
 .mapboxgl-popup {

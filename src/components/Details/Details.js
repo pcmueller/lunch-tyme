@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import MapDisplay from '../MapDisplay/MapDisplay';
 import Footer from '../Footer/Footer';
 
-const Details = ({ selected, restaurants, handlePaneClose }) => {
+const Details = ({ selected, restaurants, handlePaneClose, setSelected, setIsPaneOpen }) => {
 
   const [ details, setDetails] = useState();
   const [ location, setLocation] = useState();
@@ -18,7 +18,7 @@ const Details = ({ selected, restaurants, handlePaneClose }) => {
       });
     }
 
-    if (selected.location) {
+    if (selected?.location) {
       getLocationData();
     }
   }, [selected]);
@@ -28,16 +28,16 @@ const Details = ({ selected, restaurants, handlePaneClose }) => {
       return (
         <div className='details-body'>
           <p className='address'>
-            <span>{location.streetAddress}</span>
-            <span>{location.cityStateZip}</span>
+            <span>{location?.streetAddress}</span>
+            <span>{location?.cityStateZip}</span>
           </p>
           {selected?.contact?.formattedPhone?.length && 
             <p className='phone'>
-              {selected.contact.formattedPhone}
+              {selected?.contact?.formattedPhone}
             </p>}
           {selected?.contact?.twitter?.length && 
             <p className='twitter'>
-              @{selected.contact.twitter}
+              @{selected?.contact?.twitter}
             </p>}
         </div>
       )
@@ -54,19 +54,19 @@ const Details = ({ selected, restaurants, handlePaneClose }) => {
           drawer={true}
           style={{ zIndex: 1000 }}
           handlePaneClose={handlePaneClose}
+          setSelected={setSelected}
+          setIsPaneOpen={setIsPaneOpen}
         />
-        {location?.streetAddress && 
-          <div className='map-section'>
-            <MapDisplay 
-              selected={selected}
-              location={location}
-              restaurants={restaurants}
-            />
-          </div>
-        }
+        <div className='map-section'>
+          <MapDisplay 
+            selected={selected}
+            location={location}
+            restaurants={restaurants}
+          />
+        </div>
         <div className='details-banner'>
-          <h2 className='name'>{selected.name}</h2>
-          <h3 className='category'>{selected.category}</h3>
+          <h2 className='name'>{selected?.name}</h2>
+          <h3 className='category'>{selected?.category}</h3>
         </div>
         {details}
         <Footer />

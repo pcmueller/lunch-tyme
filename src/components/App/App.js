@@ -57,7 +57,9 @@ const App = () => {
             <Details 
               restaurants={restaurants}
               selected={selected} 
-              handlePaneClose={handlePaneClose} 
+              handlePaneClose={handlePaneClose}
+              setIsPaneOpen={setIsPaneOpen}
+              setSelected={setSelected}
             />
           </SlidingPane>
         </Route>

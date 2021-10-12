@@ -5,6 +5,7 @@ const Card = ({ id, restaurant, setSelected, setIsPaneOpen }) => {
   const handleClick = () => {
     setSelected(restaurant);
     setIsPaneOpen(true);
+    console.log(restaurant);
   }
 
   return (
