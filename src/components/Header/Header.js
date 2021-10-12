@@ -5,7 +5,7 @@ import mapBtn from '../../assets/cuts/icon_map@2x.png';
 const Header = ({ drawer, handlePaneClose, setIsPaneOpen, setSelected }) => {
 
   const handleClick = () => {
-    setSelected({ name: 'All Locations', location: { lat: 32.9618, lng: -96.829169}});
+    setSelected({ location: { lat: 32.9618, lng: -96.829169}});
     setIsPaneOpen(true);
   }
 

@@ -110,7 +110,11 @@
 }
 
 @media (min-width: 1024px) {
+  .app-header {
+    height: 150px;
+  }
+  
   .drawer-header-center h1 {
-    font-size: 32px;
+    font-size: 38px;
   }
 }

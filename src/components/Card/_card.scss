@@ -13,14 +13,18 @@
   background-repeat: no-repeat;
 }
 
+.card:active {
+  border: none;
+}
+
 @media (min-width: 767px) {
   .card {
     width: 50%;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1439px) {
   .card {
-    width: 33%;
+    width: 33.33333%;
   }
 }

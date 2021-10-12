@@ -1,4 +1,6 @@
 .list-container {
+  display: flex;
+  justify-content: center;
   width: 100%;
   position: relative;
   margin-top: 70px;
@@ -30,5 +32,11 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .list-container {
+    margin-top: 150px;
   }
 }

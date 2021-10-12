@@ -9,13 +9,10 @@ const MapDisplay = ({ selected, restaurants }) => {
   const mapContainerRef = useRef(null);
   const [lng, setLng] = useState(0);
   const [lat, setLat] = useState(0);
-  const [zoom, setZoom] = useState(18);
+  const [zoom, setZoom] = useState(16);
 
   useEffect(() => {
     const assignCoordinates = () => {
-      if (!lat && !lng) {
-        setZoom(12);
-      }
       setLat(selected?.location?.lat);
       setLng(selected?.location?.lng);
     };
@@ -36,20 +33,32 @@ const MapDisplay = ({ selected, restaurants }) => {
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
         style: 'mapbox://styles/mapbox/streets-v11',
+        attributionControl: false,
         center: [lng, lat],
-        zoom: zoom
+        zoom: zoom,
       });
 
       addMarkers(map);
-      map.addControl(new mapboxgl.GeolocateControl({
+
+      map.addControl(new mapboxgl.FullscreenControl())
+         .addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
+      const geolocate = new mapboxgl.GeolocateControl({
         positionOptions: {
-          enableHighAccuracy: true,
-          timeout: 3000
+          enableHighAccuracy: true
         },
         trackUserLocation: true,
-        showUserHeading: true
-      }));
-      map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+        timeout: 1000
+      });
+
+      map.addControl(geolocate);
+
+      if (!selected.name) {
+        setZoom(1);
+        map.on('load', () => {
+          geolocate.trigger();
+        });
+      }
 
       return () => map.remove();
     }
@@ -70,7 +79,10 @@ const MapDisplay = ({ selected, restaurants }) => {
   }
 
   return (
-    <div ref={mapContainerRef} className='map-container' />
+    <div 
+      ref={mapContainerRef} 
+      className={selected.name ? 'map-container' : 'map-container-lg'} 
+    />
   )
 }
 

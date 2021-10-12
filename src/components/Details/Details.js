@@ -57,18 +57,20 @@ const Details = ({ selected, restaurants, handlePaneClose, setSelected, setIsPan
           setSelected={setSelected}
           setIsPaneOpen={setIsPaneOpen}
         />
-        <div className='map-section'>
-          <MapDisplay 
+        <div className={selected.name ? 'map-section' : 'map-section-lg'}>
+          <MapDisplay
             selected={selected}
             location={location}
             restaurants={restaurants}
           />
         </div>
-        <div className='details-banner'>
-          <h2 className='name'>{selected?.name}</h2>
-          <h3 className='category'>{selected?.category}</h3>
-        </div>
-        {details}
+        {selected.name && 
+          <div className='details-banner'>
+            <h2 className='name'>{selected?.name}</h2>
+            <h3 className='category'>{selected?.category}</h3>
+          </div>
+        }
+        {selected.name && details}
         <Footer />
       </section>
   )

@@ -92,6 +92,7 @@ button:active {
   .details-body {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     font-size: 22px;
     margin-bottom: 0;
 
@@ -100,8 +101,7 @@ button:active {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 33.3333333%;
-      padding: 30px;
+      padding-top: 40px;
       margin: 0;
     }
   }
@@ -123,12 +123,25 @@ button:active {
 
 @media (min-width: 1024px) {
   .details-banner {
-    height: 110px;
+    height: 140px;
     padding-top: 10px;
   }
 
+  .name,
+  .category {
+    margin-left: 26px;
+  }
+
+  .name {
+    font-size: 34px;
+  }
+
+  .category {
+    font-size: 28px;
+  }
+
   .details-body p {
-    font-size: 20px;
-    padding: 45px;
+    font-size: 26px;
+    padding-top: 45px;
   }
 }
